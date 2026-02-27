@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inteligos_custom_reason_cancel,Interfaz de usuario para ingresar una razón personalizada para anular documentos,model_account_move_cancel_reason,group_fel_user,1,1,1,1
+access_inteligos_fel_contingency_manager,Contingencias FEL,model_account_fel_contingency,group_fel_user,1,1,1,0
+access_inteligos_fel_phrases_manager,Frases FEL,model_account_fel_phrases,group_fel_user,1,1,1,1
+access_inteligos_fel_log_manager,Bitácora FEL,model_account_move_fel_log,group_fel_user,1,1,1,1
+access_inteligos_fel_adendas_manager,Adendas FEL,model_company_adendas_fel,group_fel_user,1,1,1,1
+access_inteligos_urls_manager,URLs FEL,model_company_fel_url,group_fel_user,1,1,1,1

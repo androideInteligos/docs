@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="email_template_fel_send" model="mail.template">
+           <field name="name">Invoice email template - FEL</field>
+           <field name="model_id" ref="account.model_account_move"/>
+           <field name="auto_delete" eval="False"/>
+           <field name="email_from">{{object.user_id.email}}</field>
+           <field name="email_to">{{object.partner_id.email}}</field>
+           <field name="email_cc">{{object.partner_id.email}},{{object.partner_id.invoice_email}}</field>
+           <field name="subject">Documento Tributario Electrónico {{object.partner_id.legal_name}}</field>
+           <field name="lang">{{ object.partner_id.lang}}</field>
+           <field name="body_html" type="html">
+<div style="margin: 150px; padding: 0px;">
+    <p style="margin-left: 150px; margin-right: 150px; padding: 0px; font-size: 15px;">
+        <div class="text-justify">
+            Estimado(a) Contribuyente:<br/><br/>
+            <strong>
+                <t t-if="object.partner_id.parent_id">
+                    <t t-out="object.partner_id.legal_name or ''">Brandon Freeman</t> (<t t-out="object.partner_id.parent_id.legal_name or ''">Azure Interior</t>)
+                </t>
+                <t t-else="">
+                    <t t-out="object.partner_id.legal_name or ''">Brandon Freeman</t>
+                </t>
+                <br />
+                NIT: <t t-out="object.partner_id.vat or ''"/><br/><br/>
+                <t t-out="object.company_id.legal_name or ''"/>
+            </strong>
+             le emitió un DTE:<br/><br/>
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <td>Tipo:</td>
+                <td>
+                    <strong>
+                        <t t-if="object.move_type == 'entry'">ASIENTO CONTABLE</t>
+                        <t t-if="object.move_type == 'out_invoice'">FACTURA</t>
+                        <t t-if="object.move_type == 'out_refund'">FACTURA RECTIFICATIVA</t>
+                        <t t-if="object.move_type == 'in_invoice'">FACTURA DE PROVEEDOR</t>
+                        <t t-if="object.move_type == 'in_refund'">FACTURA RECTIFICATIVA DE PROVEEDOR</t>
+                        <t t-if="object.move_type == 'out_receipt'">RECIBO DE VENTAS</t>
+                        <t t-if="object.move_type == 'in_receipt'">RECIBO DE COMPRA</t>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>Autorización:</td>
+                <td><strong><t t-out="object.fel_uuid or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Serie:</td>
+                <td><strong><t t-out="object.fel_serie or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Número:</td>
+                <td><strong><t t-out="object.fel_number or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Emisor:</td>
+                <td><strong><t t-out="object.company_id.vat or ''"/> - <t t-out="object.company_id.legal_name or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Establecimiento:</td>
+                <td><strong><t t-out="object.journal_id.establishment_number or ''"/><t t-if="object.journal_id.establishment_name"> - </t><t t-out="object.journal_id.establishment_name or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Fecha de Emisión:</td>
+                <td><strong><t t-if="object.date" t-out="object.date"/></strong></td>
+            </tr>
+            <tr>
+                <td>Monto:</td>
+                <td><strong><t t-out="object.currency_id.name or ''"/> <t t-out="'%.2f'%(object.amount_total) or ''"/></strong></td>
+            </tr>
+        </table>
+
+    </p>
+</div>
+           </field>
+           <field name="report_template" ref="account.account_invoices"/>
+           <field name="report_name">Factura _{{ (object.name or '').replace('/','_') }}{{ object.state == 'draft' and '_draft' or '' }}</field>
+           <field name="lang">{{ object.partner_id.lang }}</field>
+       </record>
+
+        <record id="email_template_cancel_fel_send" model="mail.template">
+           <field name="name">Invoice Cancel Email Template - FEL</field>
+           <field name="model_id" ref="account.model_account_move"/>
+           <field name="auto_delete" eval="False"/>
+           <field name="email_from">{{object.user_id.email}}</field>
+           <field name="email_to">{{object.partner_id.email}}</field>
+           <field name="email_cc">{{object.partner_id.email}},{{object.partner_id.invoice_email}}</field>
+           <field name="subject">Documento Tributario Electrónico {{object.partner_id.legal_name}}</field>
+           <field name="lang">{{ object.partner_id.lang}}</field>
+           <field name="body_html" type="html">
+<div style="margin: 150px; padding: 0px;">
+    <p style="margin-left: 150px; margin-right: 150px; padding: 0px; font-size: 15px;">
+        <div class="text-justify">
+            Estimado(a) Contribuyente:<br/><br/>
+            <strong>
+                <t t-if="object.partner_id.parent_id">
+                    <t t-out="object.partner_id.legal_name or ''">Brandon Freeman</t> (<t t-out="object.partner_id.parent_id.legal_name or ''">Azure Interior</t>)
+                </t>
+                <t t-else="">
+                    <t t-out="object.partner_id.legal_name or ''">Brandon Freeman</t>
+                </t>
+                <br />
+                NIT: <t t-out="object.partner_id.vat or ''"/><br/><br/>
+                <t t-out="object.company_id.legal_name or ''"/>
+            </strong>
+             le anuló un DTE:<br/><br/>
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <td>Tipo:</td>
+                <td>
+                    <strong>
+                        <t t-if="object.move_type == 'entry'">ASIENTO CONTABLE</t>
+                        <t t-if="object.move_type == 'out_invoice'">FACTURA</t>
+                        <t t-if="object.move_type == 'out_refund'">FACTURA RECTIFICATIVA</t>
+                        <t t-if="object.move_type == 'in_invoice'">FACTURA DE PROVEEDOR</t>
+                        <t t-if="object.move_type == 'in_refund'">FACTURA RECTIFICATIVA DE PROVEEDOR</t>
+                        <t t-if="object.move_type == 'out_receipt'">RECIBO DE VENTAS</t>
+                        <t t-if="object.move_type == 'in_receipt'">RECIBO DE COMPRA</t>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>Autorización:</td>
+                <td><strong><t t-out="object.fel_uuid or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Serie:</td>
+                <td><strong><t t-out="object.fel_serie or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Número:</td>
+                <td><strong><t t-out="object.fel_number or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Emisor:</td>
+                <td><strong><t t-out="object.company_id.vat or ''"/> - <t t-out="object.company_id.legal_name or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Establecimiento:</td>
+                <td><strong><t t-out="object.journal_id.establishment_number or ''"/><t t-if="object.journal_id.establishment_name"> - </t><t t-out="object.journal_id.establishment_name or ''"/></strong></td>
+            </tr>
+            <tr>
+                <td>Fecha de Anulación:</td>
+                <td><strong><t t-if="object.date" t-out="object.date"/></strong></td>
+
+            </tr>
+            <tr>
+                <td>Monto:</td>
+                <td><strong><t t-out="object.currency_id.name or ''"/> <t t-out="'%.2f'%(object.amount_total) or ''"/></strong></td>
+            </tr>
+        </table>
+
+    </p>
+</div>
+           </field>
+           <field name="report_template" ref="account.account_invoices"/>
+           <field name="report_name">Factura _{{ (object.name or '').replace('/','_') }}{{ object.state == 'draft' and '_draft' or '' }}</field>
+           <field name="lang">{{ object.partner_id.lang }}</field>
+       </record>
+    </data>
+</odoo>

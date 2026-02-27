@@ -1,0 +1,59 @@
+<odoo>
+
+    <!--      Actualizacion del 19/03/2024-->
+    <!--      .-->
+    <record model="ir.ui.view" id="view_account_journal_form">
+        <field name="name">Establecimientos FEL</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <page name="bank_account" position="inside">
+                <group name="note_sequences" attrs="{'invisible': [('country_code','!=','GT')] }">
+                    <label for="ndeb_sequence_number_next"
+                           attrs="{'invisible': ['|',('type', 'not in', ['sale', 'purchase']), ('refund_sequence', '!=', True)]}"/>
+                    <div attrs="{'invisible': ['|',('type', 'not in', ['sale', 'purchase']), ('refund_sequence', '!=', True)]}">
+                        <field name="ndeb_sequence_number_next" style="padding-right: 1.0em"/>
+                        <field name="ndeb_sequence_id" required="0" attrs="{'readonly': 1}" groups="base.group_no_one"/>
+                    </div>
+
+                    <label for="nabn_sequence_number_next"
+                           attrs="{'invisible': ['|',('type', 'not in', ['sale', 'purchase']), ('refund_sequence', '!=', True)]}"/>
+                    <div attrs="{'invisible': ['|',('type', 'not in', ['sale', 'purchase']), ('refund_sequence', '!=', True)]}">
+                        <field name="nabn_sequence_number_next" style="padding-right: 1.0em"/>
+                        <field name="nabn_sequence_id" required="0" attrs="{'readonly': 1}" groups="base.group_no_one"/>
+                    </div>
+                </group>
+            </page>
+            <page name="advanced_settings" position="after">
+                <!-- attrs="{'invisible': [('country_code','!=','GT')] }" -->
+                <page name="establishment_settings" string="Establecimiento FEL" groups="l10n_gt_inteligos_fel.group_fel_manager" attrs="{'invisible': [('country_code','!=','GT')] }">
+                    <group>
+                        <group string="Datos del Establecimiento">
+                            <field name="its_fel" widget="boolean_toggle"/>
+                            <field name="establishment_name"/>
+                            <field name="establishment_number"/>
+                            <field name="street" placeholder="Calle..." class="o_address_street"/>
+                            <field name="county_id" placeholder="Municipio" class="o_address_city"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                            <field name="state_id" class="o_address_state" placeholder="Departamento"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                            <field name="zip_code" placeholder="Código postal" class="o_address_zip"/>
+                            <field name="country_id" placeholder="País" class="o_address_country"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                    </group>
+                    <group string="Frases FEL">
+                        <field name="fel_phrases_ids" colspan="2" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="phrase"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

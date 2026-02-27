@@ -1,0 +1,6 @@
+## Metadata
+name: Emisiones de Facturación electrónica Guatemala
+description: Implementación FEL en Odoo por Inteligos
+
+## Overview
+Esta habilidad nos da contexto sobre el módulo permite la facturación FEL de Guatemala para distintos proveedores. Los actualmente integrados son: INFILE, MegaPrint, Digifact, eForcon, Ecofacturas, Contap

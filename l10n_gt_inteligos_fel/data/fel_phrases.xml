@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ISR -->
+    <record model='account.fel_phrases' id='uno_uno'>
+        <field name='type'>1</field>
+        <field name="phrase">1</field>
+        <field name="name">Sujeto a pagos trimestrales ISR</field>
+    </record>
+    <record model='account.fel_phrases' id='uno_dos'>
+        <field name='type'>1</field>
+        <field name="phrase">2</field>
+        <field name="name">Sujeto a retención definitiva ISR</field>
+    </record>
+    <record model='account.fel_phrases' id='uno_tres'>
+        <field name='type'>1</field>
+        <field name="phrase">3</field>
+        <field name="name">Sujeto a pago directo ISR</field>
+    </record>
+
+    <!-- Retención del IVA -->
+    <record model='account.fel_phrases' id='dos_uno'>
+        <field name='type'>2</field>
+        <field name="phrase">1</field>
+        <field name="name">Agente de Retención del IVA</field>
+    </record>
+
+    <!-- No genera derecho a Crédito Fiscal del IVA -->
+    <record model='account.fel_phrases' id='tres_uno'>
+        <field name='type'>3</field>
+        <field name="phrase">1</field>
+        <field name="name">No genera derecho a crédito fiscal</field>
+    </record>
+
+    <!-- Frases de Exento o no afecto al IVA -->
+    <record model='account.fel_phrases' id='cuatro_uno'>
+        <field name='type'>4</field>
+        <field name="phrase">1</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 2 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_dos'>
+        <field name='type'>4</field>
+        <field name="phrase">2</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 4 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_tres'>
+        <field name='type'>4</field>
+        <field name="phrase">3</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 5 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_cuatro'>
+        <field name='type'>4</field>
+        <field name="phrase">4</field>
+        <field name="name">Exenta del IVA (art.  7 núm. 9 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_cinco'>
+        <field name='type'>4</field>
+        <field name="phrase">5</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 10 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_seis'>
+        <field name='type'>4</field>
+        <field name="phrase">6</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 13 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_siete'>
+        <field name='type'>4</field>
+        <field name="phrase">7</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 14 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_ocho'>
+        <field name='type'>4</field>
+        <field name="phrase">8</field>
+        <field name="name">Exenta del IVA (art. 8 núm. 1 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_nueve'>
+        <field name='type'>4</field>
+        <field name="phrase">9</field>
+        <field name="name">Exenta del IVA (art. 7 núm. 15 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_diez'>
+        <field name='type'>4</field>
+        <field name="phrase">10</field>
+        <field name="name">Esta factura no incluye IVA (art. 55 Ley del IVA)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_once'>
+        <field name='type'>4</field>
+        <field name="phrase">11</field>
+        <field name="name">No afecta al IVA (Decreto 29-89 Ley de Maquila)</field>
+    </record>
+    <record model='account.fel_phrases' id='cuatro_doce'>
+        <field name='type'>4</field>
+        <field name="phrase">12</field>
+        <field name="name">No afecta al IVA (Decreto 65-89 Ley de Zonas Francas)</field>
+    </record>
+
+</odoo>

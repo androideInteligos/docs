@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id='l10n_gt_td_generic.it_cui' model='l10n_latam.identification.type'>
+            <field name='key_name_fel'>CUI</field>
+        </record>
+
+        <record id='l10n_latam_base.it_vat' model='l10n_latam.identification.type'>
+            <field name='key_name_fel'>NIT</field>
+        </record>
+
+        <record id='l10n_latam_base.it_pass' model='l10n_latam.identification.type'>
+            <field name='key_name_fel'>EXT</field>
+            <field name='description'>Licencia para poder pasar libre y seguramente de un pueblo o país a otro.</field>
+        </record>
+
+        <record id='l10n_latam_base.it_fid' model='l10n_latam.identification.type'>
+            <field name='key_name_fel'>EXT</field>
+        </record>
+
+    </data>
+</odoo>

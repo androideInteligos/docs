@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="res_config_settings_view_form" model="ir.ui.view">
+       <field name="name">Herencia de Res Config Settings para la configuración de ingresar direcciones FEL</field>
+       <field name="model">res.config.settings</field>
+       <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+       <field name="arch" type="xml">
+           <div id="eu_service" position="after">
+               <div class="col-12 col-lg-6 o_setting_box">
+                   <div class="o_setting_left_pane">
+                       <field name="mandatory_address_fel"/>
+                   </div>
+                   <div class="o_setting_right_pane">
+                       <label for="mandatory_address_fel"/>
+                       <div class="text-muted">
+                           Si desea que el ingreso de direcciones de los clientes sean ingresado obligatoriamente para emitir documentos FEL, seleccionar, de lo contrario no hacerlo.
+                       </div>
+                  </div>
+               </div>
+
+               <div class="col-12 col-lg-6 o_setting_box" id="amount_restrict_cf">
+                   <div class="o_setting_left_pane">
+                       <field name="amount_restrict_cf"/>
+                   </div>
+                   <div class="o_setting_right_pane">
+                       <label for="amount_restrict_cf"/>
+                       <div class="text-muted">
+                           Monto de restricción de emisiones FEL con identificación CF o Consumidor Final.
+                       </div>
+                  </div>
+              </div>
+          </div>
+      </field>
+   </record>
+
+</odoo>

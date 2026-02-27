@@ -1,0 +1,293 @@
+<odoo>
+
+    <record model="ir.ui.view" id="res_company_fel">
+        <field name="name">Company FEL</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet" position="before">
+                <header>
+                    <!-- TOKEN -->
+                    <!-- ('country_code','!=','GT') -->
+                    <button name="get_token" string="Generar Token" class="oe_highlight" type="object"
+                            groups="l10n_gt_inteligos_fel.group_fel_manager"
+                            attrs="{'invisible': ['|', ('fel_provider', 'not in', ['DI','CO','MP']), ('country_code','!=','GT')]}"/>
+                </header>
+            </xpath>
+
+            <field name="partner_id" position="after">
+                <field name="legal_name" attrs="{'invisible': [('country_code','!=','GT')] }"/>
+                <field name="exporter_code" attrs="{'invisible': [('country_code','!=','GT')] }"/>
+            </field>
+
+            <xpath expr="/form/sheet/notebook/page" position="after">
+                <!-- ('country_code','!=','GT') -->
+                <page string="Configuración FEL" groups="l10n_gt_inteligos_fel.group_fel_manager" attrs="{'invisible': [('country_code','!=','GT')] }">
+                    <group string="Datos del Certificador">
+                        <group id="fel_fields">
+                            <field name="fel_provider"/>
+                            <field name="fel_user"/>
+                            <field name="fel_pass_sign"
+                                   attrs="{'invisible': [('fel_provider', 'not in', ['IN', 'ECO'])]}"/>
+                            <field name="fel_pass"
+                                   attrs="{'invisible': [('fel_provider', 'not in', ['IN', 'FC', 'ECO'])]}"/>
+                            <field name="vat_digifact" attrs="{'invisible': [('fel_provider', '!=', 'DI')]}"/>
+                            <field name="password"
+                                   attrs="{'invisible': [('fel_provider', 'not in', ['DI','CO','MP'])]}"/>
+                            <field name="token"
+                                   attrs="{'invisible': ['|', ('fel_provider', 'not in', ['DI','CO','MP']), ('token', '!=', False)]}"/>
+                            <field name="date_due" attrs="{'invisible': [('fel_provider', '!=', 'DI')]}"/>
+                            <field name="counter_access_number"/>
+                            <field name="fel_iva"/>
+                            <field name="establishment_number"/>
+                            <field name="amount_restrict_cf"/> <!--      Actualizacion del 26.10.2022-->
+                            <!--      Actualizacion del 13.09.2021-->
+                            <!--        Mejora para configurar por compañía las urls para emisiones FEL según el ambiente que se esté.-->
+                            <field name="env_fel"/>
+                            <!--      Actualizacion del 13.09.2021-->
+                            <!--        Mejora para configurar por compañía las urls para emisiones FEL según el ambiente que se esté.-->
+                            <!--                        <field name="its_fel"/>-->
+                        </group>
+                        <group id="config_email_report">
+                            <field name="nit_fel_provider"/>
+                            <field name="send_invoice_email_fel"/>
+                            <field name="show_head_info_report_invoice"/>
+                        </group>
+
+                    </group>
+
+                    <notebook colspan="4">
+                        <!--      Actualizacion del 13.09.2021-->
+                        <!--        Mejora para configurar por compañía las urls para emisiones FEL según el ambiente que se esté.-->
+                        <page string="Urls FEL">
+                            <group name="fel_url_ids">
+                                <field name="fel_url_ids" colspan="2" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="company_id"/>
+                                        <field name="use_type"/>
+                                        <field name="prod_url"/>
+                                        <field name="test_url"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <!--      Actualizacion del 13.09.2021-->
+                        <!--        Mejora para configurar por compañía las urls para emisiones FEL según el ambiente que se esté.-->
+
+                        <page string="Frases FEL">
+                            <group name="fel_phrases">
+
+                                <field name="fel_phrases_ids" colspan="2" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="phrase"/>
+                                        <field name="name"/>
+                                        <field name="type"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+
+                        <page string="Adendas FEL">
+                            <group name="adendas_fel">
+                                <field name="adendas_ids" colspan="2" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="doc_type_id"/>
+                                        <field name="name"/>
+                                        <field name="model_id"/>
+                                        <field name="field_id" domain="[('model_id','=', model_id)]"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_fiscal_position_fel">
+        <field name="name">Fiscal Position FEL</field>
+        <field name="model">account.fiscal.position</field>
+        <field name="inherit_id" ref="account.view_account_position_form"/>
+        <field name="arch" type="xml">
+            <page name="account_mapping" position="after">
+                <page string="Frases FEL">
+                    <field name="fel_phrases_ids" colspan="2" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="phrase"/>
+                            <field name="name"/>
+                            <field name="type"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="exporter_code_shipping_partner_fel">
+        <field name="name">Herencia de vista tipo formulario para los datos del receptor de los DTEs</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">400</field>
+        <field name="arch" type="xml">
+            <!--          Actualización 27/04/2021-->
+            <!--            Mejora para envío de datos si el cliente es un consumidor final.-->
+            <field name="legal_name" position="after">
+                <field name="country_code" invisible="1"/>
+                <field name="its_final_consumer" attrs="{'invisible': [('country_code','!=','GT')] }"/>
+            </field>
+            <!--          Fin de actualización 27/04/2021-->
+
+            <xpath expr="/form/sheet/notebook/page/field/form/sheet/group/group[2]/field[@name='mobile']"
+                   position="after">
+                <field name="country_code" invisible="1"/>
+                <field name="ref" string="Código Consignatario" attrs="{'invisible': [('country_code','!=','GT')] }"/>
+            </xpath>
+
+            <field name="website" position="before">
+                <field name="country_code" invisible="1"/>
+                <field name="invoice_email" widget="text" attrs="{'invisible': [('country_code','!=','GT')] }"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_partner_fel">
+        <field name="name">Partner FEL</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <page name="accounting" position="inside">
+                <group string="Frases FEL" attrs="{'invisible': [('country_code','!=','GT')] }">
+                    <field name="fel_phrases_ids" colspan="2" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="phrase" />
+                            <field name="name" />
+                            <field name="type" />
+                        </tree>
+                    </field>
+                </group>
+            </page>
+        </field>
+    </record>
+
+    <!--    CONTINGENCIAS-->
+    <record id="tree_view_contingency" model="ir.ui.view">
+        <field name="name">Vista Lista - Contingencias</field>
+        <field name="model">account.fel_contingency</field>
+        <field name="arch" type="xml">
+            <tree string="Contingencias" decoration-muted="date_end!=False" create="false">
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="documents_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="form_view_contigency" model="ir.ui.view">
+        <field name="name">Vista Formulario - Contingencias</field>
+        <field name="model">account.fel_contingency</field>
+        <field name="arch" type="xml">
+            <form string="Contingencias">
+                <sheet>
+                    <!--				    <h1>-->
+                    <!--						<field name="name" readonly="True"/>-->
+                    <!--				    </h1>-->
+
+                    <group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+
+                        <group>
+                            <field name="source" readonly="1"/>
+                            <field name="location"/>
+                            <field name="documents_qty"/>
+                        </group>
+                    </group>
+
+                    <notebook name="moves">
+                        <page string="Facturas">
+                            <field name="move_ids" colspan="2" mode="tree" nolabel="1">
+                                <tree string="Facturas" create="false">
+                                    <field name="name"/>
+                                    <field name="partner_id"/>
+                                    <!--									<field name="date_invoice"/>-->
+                                    <field name="state"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Logs">
+                            <field name="logs" mode="tree" nolabel="1">
+                                <tree>
+                                    <field name="type" string="Tipo"/>
+                                    <field name="timestamp"/>
+                                    <field name="error_msg"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <!--				<div class="oe_chatter">-->
+                <!--					<field name="message_follower_ids" widget="mail_followers"/>-->
+                <!--					<field name="activity_ids" widget="mail_activity"/>-->
+                <!--					<field name="message_ids" widget="mail_thread"/>-->
+                <!--				</div>-->
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_move_reversal">
+        <field name="name">Reversa de DTE</field>
+        <field name="model">account.move.reversal</field>
+        <field name="inherit_id" ref="account.view_account_move_reversal"/>
+        <field name="arch" type="xml">
+            <field name="journal_id" position="after">
+                <field name="country_code" invisible="1"/>
+                <field name="dte_doc_type" options="{'no_create_edit': True}" attrs="{'invisible':[('country_code','!=','GT')],'required':[('country_code','=','GT')]}"/>
+            </field>
+        </field>
+    </record>
+    <!--      Fin de actualizacion 10/05/2021-->
+
+    <record model="ir.actions.act_window" id="l10n_gt_inteligos_fel.action_menu_contingency">
+        <field name="name">Contingencias</field>
+        <field name="res_model">account.fel_contingency</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">
+            {
+            'tree_view_ref': 'account.tree_view_contingency',
+            'form_view_ref': 'account.form_view_contigency'
+            }
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No hay Contingencias
+            </p>
+        </field>
+    </record>
+
+    <!--    Actualización 10/08/2023 para posicionar campo de correo de facturación   -->
+    <!--    <record model="ir.ui.view" id="account_partner_fel_invoice_email">-->
+    <!--        <field name="name">account_partner_fel_invoice_email</field>-->
+    <!--        <field name="model">res.partner</field>-->
+    <!--        <field name="inherit_id" ref="mail_tracking.view_partner_form"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <field name="email_score" position="before">-->
+    <!--                <field name="invoice_email" widget="text"/>-->
+    <!--            </field>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <menuitem name="Contingencias"
+              id="l10n_gt_inteligos_fel_contingency"
+              parent="account.menu_finance_receivables"
+              action="l10n_gt_inteligos_fel.action_menu_contingency"
+              sequence="6"/>
+
+</odoo>

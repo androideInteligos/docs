@@ -1,0 +1,24 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_move_form_cancel">
+        <field name="name">Vista tipo Formulario para la anulación de DTE agregandoles un mensaje de razón personalizada</field>
+        <field name="model">account.move.cancel_reason</field>
+        <field name="priority">200</field>
+        <field name="arch" type="xml">
+            <form string="Ingrese la razón de anulación">
+                <h3>Razón de anulación</h3>
+                <group>
+                    <field name="move_type" invisible="1"/>
+                    <field name="reason_note" colspan="2" required="1" width="100%" nolabel='1'/>
+                </group>
+
+                <footer>
+                    <button string='Anular' context="{'default_move_type': move_type}"
+                            name='button_cancel' type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
