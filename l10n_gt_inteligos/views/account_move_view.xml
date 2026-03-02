@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="l10n_latam_view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="l10n_latam_invoice_document.view_move_form"/>
+        <field name="arch" type="xml">
+
+            <form>
+                <field name="l10n_latam_document_type_id_code" invisible="1"/>
+            </form>
+
+            <field name="l10n_latam_document_type_id" position="attributes">
+                <attribute name="readonly">
+                    posted_before or l10n_latam_document_type_id_code == '5'
+                </attribute>
+            </field>
+
+            <xpath expr="//group[@id='header_left_group']//div[hasclass('o_col')]" position="after">
+                <field name="l10n_latam_document_type_id" position="move"/>
+                <field name="l10n_latam_document_number" position="move"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move_gt</field>
+        <field name="model">account.move</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1[1]" position="replace">
+                <!--                <field name="country_code" invisible="1"/>-->
+                <div class="oe_title"
+                     invisible="move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')">
+                    <h1>
+                        <div invisible="move_type not in ('out_invoice', 'out_refund', 'out_receipt')">
+                            <field name="invoice_ref" readonly="1" class="oe_inline"/>
+                            <field name="name" readonly="1" invisible="name == '/' or country_code != 'CR'"/>
+                        </div>
+                        <div invisible="move_type not in ('in_invoice', 'in_refund', 'in_receipt')">
+                            <field name="invoice_ref" readonly="1" class="oe_inline" invisible="name == '/'"/>
+                            <field name="name" readonly="1" invisible="name == '/' or country_code != 'CR'"/>
+                        </div>
+                    </h1>
+                </div>
+
+                <div class="oe_title"
+                     invisible="move_type in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')">
+                    <h1>
+                        <field name="name" readonly="True" invisible="name == '/'"/>
+                    </h1>
+                </div>
+            </xpath>
+
+            <xpath expr="//group[@id='header_left_group']//div[hasclass('o_col')]" position="after">
+                <!--changegt-->
+                <field name="invoice_doc_serie"
+                       invisible="move_type not in ['in_invoice', 'in_refund'] or country_code != 'GT'"/>
+                <field name="invoice_doc_number"
+                       invisible="move_type not in ['in_invoice', 'in_refund'] or country_code != 'GT'"
+                       required="move_type in ('in_invoice', 'in_refund')"/>
+            </xpath>
+
+            <!--changegt-->
+            <div name="journal_div" position="after">
+                <field name="name" readonly="True" invisible="name == '/' or country_code != 'GT'"/>
+            </div>
+            <div name="journal_div" position="after">
+                <field name="rate_invoice"/>
+            </div>
+        </field>
+    </record>
+
+    <record id="account_invoice_supplier_tree_reference" model="ir.ui.view">
+        <field name="name">account.invoice_gt_generico_sup_ref_tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <!--changegt-->
+            <field name="invoice_date" position="after">
+                <field name="l10n_latam_document_type_id" optional="show" string="Tipo Doc."/>
+                <field name="invoice_ref" optional="show" string="Ref. Proveedor"
+                       column_invisible="context.get('default_move_type') not in ('in_invoice', 'in_refund','in_receipt')"/>
+            </field>
+            <field name="amount_total_in_currency_signed" position="after">
+                <field name="amount_total" optional="show"/>
+            </field>
+            <field name="amount_residual_signed" position="after">
+                <field name="amount_residual" optional="show" string="Saldo"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_move_inherit_search">
+        <field name="name">Account Move Inherit Search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="invoice_ref" string="Ref. Proveedor"
+                       filter_domain="['|',('invoice_doc_serie','ilike',self),('invoice_doc_number','ilike',self)]"/>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="nit"/>
+                <field name="legal_name"/>
+            </field>
+            <filter name="duedate" position="after">
+                <filter string="Sub-regiones" name="sub_region" domain="[]" context="{'group_by': 'sub_region_id'}"/>
+                <filter string="Regiones" name="region" domain="[]" context="{'group_by': 'region_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

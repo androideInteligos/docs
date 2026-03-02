@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="inherited_res_config_settings_view_payment_day" model="ir.ui.view">
+        <field name="name">Inherited Res Config Settings Payment Day</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="eu_service" position="after">
+                <!--changegt-->
+                <div class="col-12 col-lg-6 o_setting_box" invisible="country_code != 'GT'">
+                    <div class="o_setting_left_pane">
+                        <field name="duplicate_nit"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="duplicate_nit"/>
+                        <div class="text-muted">
+                            Si desea aceptar NITs duplicados, seleccionar, de lo contrario no hacerlo.
+                        </div>
+                    </div>
+                </div>
+            </setting>
+
+            <xpath expr="//block[@id='invoicing_settings']" position="inside">
+                <!--changegt-->
+                <div class="col-12 col-lg-6 o_setting_box" id="payment_day"
+                     title="El día seleccionado es  para ser ingresados por defecto en cada fecha de pago de las facturas."
+                     invisible="country_code != 'GT'">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Día para recibir pagos</span>
+                        <span class="fa fa-lg fa-building-o"
+                              title="Valores para ser ingresados por defecto en cada fecha de pago de las facturas."
+                              aria-label="El día seleccionado es para ser ingresados por defecto en cada fecha de pago de las facturas."/>
+                        <div class="text-muted">
+                            Ingrese el día del mes para recibir pagos, para hacer los cálculos en la fecha de factura.
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="payment_day" class="col-lg-3 o_light_label"/>
+                                <field name="payment_day" force_save="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//setting[@id='default_incoterm']" position="after">
+                <!--changegt-->
+                <div class="col-12 col-lg-6 o_setting_box" id="default_invoice_doc_type"
+                     invisible="country_code != 'GT'">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Tipo de documento predeterminado</span>
+                        <div class="text-muted">
+                            Tipo de documento predeterminado de tu compañía
+                        </div>
+
+                        <div class="text-muted">
+                            <field name="l10n_latam_document_type_id"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

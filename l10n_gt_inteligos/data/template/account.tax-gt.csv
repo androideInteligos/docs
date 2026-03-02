@@ -1,0 +1,85 @@
+"id","name","description","invoice_label","amount_type","amount","formula","type_tax_use","price_include_override","tax_group_id","group_type","repartition_line_ids/repartition_type","repartition_line_ids/document_type","repartition_line_ids/account_id"
+"impuestos_plantilla_iva_por_cobrar","IVA por Cobrar","IVA por Cobrar","IVA por Cobrar","percent","12.00","","purchase","tax_included","tax_group_iva_12","vat","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_110301"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_110301"
+"impuestos_plantilla_iva_por_pagar","IVA por Pagar","IVA por Pagar","IVA por Pagar","percent","12.00","","sale","tax_included","tax_group_iva_12","vat","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210301"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210301"
+"impuestos_plantilla_iva_retenido_fesp","IVA retenido factura especial","IVA Ret. Fac. Esp.","IVA retenido factura especial","code","0.00","-((price_unit * quantity)/1.12) * 0.12","purchase","tax_excluded","tax_group_iva_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210310"
+"","","","","","","","","","","","base","refund",
+"","","","","","","","","","","","tax","refund","cta_gt_210310"
+"impuestos_plantilla_dai_5","DAI 5%","DAI 5%","DAI 5%","percent","5.00","","purchase","tax_excluded","tax_group_dai","dai","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_110499"
+"","","","","","","","","","","","base","refund",
+"","","","","","","","","","","","tax","refund","cta_gt_110499"
+"impuestos_plantilla_isr_fesp","ISR retenido facturas especiales","ISR Ret. Fac. Esp.","ISR retenido facturas especiales","code","0.00","-((price_unit * quantity) / 1.12) * 0.05","purchase","tax_excluded","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210312"
+"","","","","","","","","","","","base","refund",
+"","","","","","","","","","","","tax","refund","cta_gt_210312"
+"impuestos_plantilla_dai_10","DAI 10%","DAI 10%","DAI 10%","percent","10.00","","purchase","tax_excluded","tax_group_dai","dai","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_110499"
+"","","","","","","","","","","","base","refund",
+"","","","","","","","","","","","tax","refund","cta_gt_110499"
+"impuestos_plantilla_tasa_municipal_13","Tasa Municipal 13%","Tasa M. 13%","Tasa Municipal 13%","percent","13.00","","purchase","tax_included","tax_group_otros","other","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610803"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610803"
+"impuestos_plantilla_tasa_municipal_12","Tasa Municipal 12%","Tasa M. 12%","Tasa Municipal 12%","percent","12.00","","purchase","tax_included","tax_group_otros","other","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610803"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610803"
+"impuestos_plantilla_inguat","Inguat 10%","Inguat 10%","Inguat 10%","code","0.00","((price_unit * quantity)/1.22) * 0.10","purchase","tax_included","tax_group_otros","other","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610802"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610802"
+"impuestos_plantilla_timbre_prensa","Timbre de prensa","Timbre de prensa","Timbre de prensa","percent","0.50","","sale","tax_excluded","tax_group_tdp","other","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210317"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210317"
+"impuestos_plantilla_idp_super","IDP Super","IDP Super","IDP Super","fixed","4.70","","purchase","tax_included","tax_group_idp","idp","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610806"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610806"
+"impuestos_plantilla_idp_regular","IDP Regular","IDP Regular","IDP Regular","fixed","4.60","","purchase","tax_included","tax_group_idp","idp","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610806"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610806"
+"impuestos_plantilla_idp_diesel","IDP Diesel","IDP Diesel","IDP Diesel","fixed","1.30","","purchase","tax_included","tax_group_idp","idp","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_610806"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_610806"
+"impuestos_plantilla_isr_noresidente25","ISR NO RESIDENTE 25%","ISR No Residente","ISR NO RESIDENTE 25%","code","0.00","-price_unit * 0.25","purchase","tax_included","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210316"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210316"
+"impuestos_plantilla_dai_15","DAI 15%","DAI 15%","DAI 15%","percent","15.00","","purchase","tax_excluded","tax_group_dai","dai","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_110499"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_110499"
+"impuestos_plantilla_isr_retenido","ISR Retenido Proveedores","ISR Ret. Prov.","ISR Retenido Proveedores","code","0.00","-(max(price_unit - 30000, 0) / 1.12 * 0.07 + min(max(price_unit - 2500, 0), 5000) / 1.12 * 0.05 + min(max(price_unit - 29999, 0), 1) * 1500)","purchase","tax_included","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210311"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210311"
+"impuestos_plantilla_iva_retenido_15","IVA Retenido 15%","IVA Ret. 15%","IVA Retenido 15%","code","0.00","-(price_unit / 1.12) * 0.12 * 0.15","purchase","tax_included","tax_group_iva_12","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210308"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210308"
+"impuestos_plantilla_iva_importaciones","IVA importación","IVA importación","IVA importación","percent","12.00","","purchase","tax_excluded","tax_group_iva_12","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_110301"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_110301"
+"impuestos_plantilla_iva_noresidente10","ISR NO RESIDENTE 10%","ISR No Residente","ISR NO RESIDENTE 10%","code","0.00","-price_unit * 0.10","purchase","tax_included","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210316"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210316"
+"impuestos_plantilla_iva_noresidente05","ISR NO RESIDENTE 05%","ISR No Residente","ISR NO RESIDENTE 05%","code","0.00","-price_unit * 0.05","purchase","tax_included","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210316"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210316"
+"impuestos_plantilla_iva_noresidente15","ISR NO RESIDENTE 15%","ISR No Residente","ISR NO RESIDENTE 15%","code","0.00","-price_unit * 0.15","purchase","tax_included","tax_group_isr_retenido","","base","invoice",
+"","","","","","","","","","","","tax","invoice","cta_gt_210316"
+"","","","","","","","","","","","base","refund",""
+"","","","","","","","","","","","tax","refund","cta_gt_210316"

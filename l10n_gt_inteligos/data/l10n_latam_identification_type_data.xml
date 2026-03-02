@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='it_cui' model='l10n_latam.identification.type'>
+        <field name='name'>CUI/DPI</field>
+        <field name='description'>Código Unico de Identificación / Documento Personal de Identidad</field>
+        <field name='country_id' ref='base.gt'/>
+        <field name='sequence'>10</field>
+    </record>
+    <record id='l10n_latam_base.it_vat' model='l10n_latam.identification.type'>
+        <field name='name'>NIT</field>
+        <field name='description'>Número de Identificación Tributaria</field>
+        <field name='country_id' ref='base.gt'/>
+    </record>
+</odoo>

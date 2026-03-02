@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="sequence_view" model="ir.ui.view">
+        <field name="name">Herencia de vista tipo formulario de la secuencia para agregar campos Diario y Tipo de
+            documento
+        </field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view"/>
+        <field name="arch" type="xml">
+            <field name="suffix" position="before">
+                <!--changegt-->
+                <field name="country_code" invisible="1"/>
+                <field name="l10n_latam_document_type_id" options="{'no_open': True, 'no_create': True}"
+                       invisible="country_code != 'GT'"/>
+                <field name="journal_id" options="{'no_open': True, 'no_create': True}"
+                       invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="sequence_view_tree" model="ir.ui.view">
+        <field name="name">Herencia de vista tipo listado de la secuencia para agregar campos Diario y Tipo de
+            documento
+        </field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="implementation" position="before">
+                <!--changegt-->
+                <field name="country_code" invisible="1"/>
+                <field name="l10n_latam_document_type_id" options="{'no_open': True, 'no_create': True}"
+                       invisible="country_code != 'GT'"/>
+                <field name="journal_id" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sequence_search" model="ir.ui.view">
+        <field name="name">Herencia de vista tipo búsqueda de la secuencia para agregar campos Diario y Tipo de
+            documento
+        </field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.view_sequence_search"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="before">
+                <field name="l10n_latam_document_type_id"/>
+                <field name="journal_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

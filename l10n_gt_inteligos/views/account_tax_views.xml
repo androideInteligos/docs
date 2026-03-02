@@ -1,0 +1,13 @@
+<odoo>
+    <record model="ir.ui.view" id="view_tax_form_gt">
+        <field name="name">Vista para campos de impuestos municipales Guatemala</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field name="gt_state_id" invisible="country_code != 'GT'"/>
+                <field name="gt_county_id" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

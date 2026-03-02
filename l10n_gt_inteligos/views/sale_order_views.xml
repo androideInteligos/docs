@@ -1,0 +1,35 @@
+<odoo>
+    <record model="ir.ui.view" id="view_sales_order_filter">
+        <field name="name">Herencia de Vista tipo Búsqueda de Pedido de Venta para Regiones de Ventas</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[@name='order_month']" position="after">
+                <field name="country_code" invisible="1"/>
+                <filter string="Sub-regiones de factura" name="sub_region_invoice" domain="[]"
+                        context="{'group_by': 'sub_region_invoice_id'}"/>
+                <filter string="Regiones de factura" name="region_invoice" domain="[]"
+                        context="{'group_by': 'region_invoice_id'}"/>
+                <filter string="Sub-regiones de entrega" name="sub_region_shipping" domain="[]"
+                        context="{'group_by': 'sub_region_shipping_id'}"/>
+                <filter string="Regiones de entrega" name="region_shipping" domain="[]"
+                        context="{'group_by': 'region_shipping_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sale_order_pivot">
+        <field name="name">Herencia de Vista tipo Pivot de Pedido de Venta para Regiones de Ventas</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_pivot"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="country_code" invisible="1"/>
+                <field name="sub_region_invoice_id" type="measure" invisible="country_code != 'GT'"/>
+                <field name="region_invoice_id" type="measure" invisible="country_code != 'GT'"/>
+                <field name="sub_region_shipping_id" type="measure" invisible="country_code != 'GT'"/>
+                <field name="region_shipping_id" type="measure" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

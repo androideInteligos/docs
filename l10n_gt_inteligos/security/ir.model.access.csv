@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_gt_county,Permisos usuario a municipios geográficos Guatemala,model_gt_county,base.group_user,1,0,0,0
+access_portal_user_gt_county,Permisos usuario a municipios geográficos Guatemala,model_gt_county,base.group_portal,1,0,0,0
+access_manager_gt_county,Permisos superusuario a municipios geográficos Guatemala,model_gt_county,base.group_system,1,1,1,1
+access_user_gt_regions,Permisos usuario a regiones geográficas Guatemala,model_gt_region,base.group_user,1,0,0,0
+access_user_gt_sub_regions,Permisos usuario a sub-regiones geográficas Guatemala,model_gt_sub_region,base.group_user,1,0,0,0
+access_manager_gt_regions,Permisos superusuario a regiones geográficas Guatemala,model_gt_region,base.group_system,1,1,1,1
+access_manager_gt_sub_regions,Permisos superusuario a sub-regiones geográficas Guatemala,model_gt_sub_region,base.group_system,1,1,1,1
+access_user_gt_zone,Permisos usuario a zonas municipales geográficos Guatemala,model_gt_zone,base.group_user,1,0,0,0
+access_manager_gt_zone,Permisos superusuario a zonas municipales geográficos Guatemala,model_gt_zone,base.group_system,1,1,1,1

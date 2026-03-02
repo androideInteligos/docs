@@ -1,0 +1,66 @@
+<odoo>
+
+    <!-- explicit list view Municipios -->
+    <record model="ir.ui.view" id="county_list_view">
+        <field name="name">Vista Listado - Municipios geográficos de Guatemala</field>
+        <field name="model">gt.county</field>
+        <field name="arch" type="xml">
+            <list create="false" name="list_county">
+                <field name="name"/>
+                <field name="state_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- explicit form view Municipios -->
+    <record model="ir.ui.view" id="county_form_view">
+        <field name="name">Vista Formulario - Municipios geográficos de Guatemala</field>
+        <field name="model">gt.county</field>
+        <field name="arch" type="xml">
+            <form string="Municipios">
+                <sheet name="sheet_wr">
+                    <div class="oe_title" name="title_name">
+                        <h1 name="title">
+                            <field name="name"/>
+                        </h1>
+                        <group name="state">
+                            <field name="state_id"/>
+                        </group>
+                    </div>
+                    <notebook>
+                        <page string="Zonas">
+                            <field name="zone_ids">
+                                <list editable='bottom'>
+                                    <field name="name"/>
+                                    <field name="gt_code"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="county_action_window">
+        <field name="name">Municipios</field>
+        <field name="res_model">gt.county</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administración de Municipios en el sistema.
+            </p>
+            <p>
+                Cada registro debe ser un distinto municipio enlazado a su respectivo depto.
+            </p>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <menuitem name="Municipios" id="menu_county"
+              parent="contacts.menu_localisation" sequence="4"
+              action="county_action_window"
+              groups="base.group_system"/>
+
+</odoo>

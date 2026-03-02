@@ -1,0 +1,339 @@
+id,name,state_id:id,gt_code
+county_gt_13,Chahal,base.state_gt_ave,01
+county_gt_12,Chisec,base.state_gt_ave,02
+county_gt_1,Cobán,base.state_gt_ave,03
+county_gt_14,Fray Bartolomé de las Casas,base.state_gt_ave,04
+county_gt_6,Panzós,base.state_gt_ave,05
+county_gt_17,Raxruhá,base.state_gt_ave,06
+county_gt_10,San Agustín Lanquín,base.state_gt_ave,07
+county_gt_3,San Cristóbal Verapaz,base.state_gt_ave,08
+county_gt_9,San Juan Chamelco,base.state_gt_ave,09
+county_gt_5,San Miguel Tucurú,base.state_gt_ave,10
+county_gt_8,San Pedro Carchá,base.state_gt_ave,12
+county_gt_15,Santa Catalina La Tinta,base.state_gt_ave,13
+county_gt_2,Santa Cruz Verapaz,base.state_gt_ave,14
+county_gt_11,Santa María Cahabón,base.state_gt_ave,15
+county_gt_7,Senahú,base.state_gt_ave,17
+county_gt_4,Tactic,base.state_gt_ave,18
+county_gt_16,Tamahú,base.state_gt_ave,19
+county_gt_21,Cubulco,base.state_gt_bve,01
+county_gt_22,Granados,base.state_gt_bve,02
+county_gt_25,Purulhá,base.state_gt_bve,03
+county_gt_20,Rabinal,base.state_gt_bve,04
+county_gt_18,Salamá,base.state_gt_bve,05
+county_gt_24,San Jerónimo,base.state_gt_bve,06
+county_gt_19,San Miguel Chicaj,base.state_gt_bve,07
+county_gt_23,Santa Cruz el Chol,base.state_gt_bve,08
+county_gt_36,Acatenango,base.state_gt_cmt,01
+county_gt_26,Chimaltenango,base.state_gt_cmt,02
+county_gt_41,El Tejar,base.state_gt_cmt,03
+county_gt_39,Parramos,base.state_gt_cmt,04
+county_gt_34,Patzicía,base.state_gt_cmt,05
+county_gt_32,Patzún,base.state_gt_cmt,06
+county_gt_38,San Andrés Itzapa,base.state_gt_cmt,07
+county_gt_27,San José Poaquil,base.state_gt_cmt,08
+county_gt_29,San Juan Comalapa,base.state_gt_cmt,09
+county_gt_28,San Martín Jilotepeque,base.state_gt_cmt,10
+county_gt_33,San Miguel Pochuta,base.state_gt_cmt,11
+county_gt_37,San Pedro Yepocapa,base.state_gt_cmt,12
+county_gt_30,Santa Apolonia,base.state_gt_cmt,13
+county_gt_35,Santa Cruz Balanyá,base.state_gt_cmt,14
+county_gt_31,Tecpán,base.state_gt_cmt,15
+county_gt_40,Zaragoza,base.state_gt_cmt,16
+county_gt_45,Camotán,base.state_gt_cqm,01
+county_gt_42,Chiquimula,base.state_gt_cqm,02
+county_gt_50,Concepción Las Minas,base.state_gt_cqm,03
+county_gt_44,Esquipulas,base.state_gt_cqm,04
+county_gt_48,Ipala,base.state_gt_cqm,05
+county_gt_43,Jocotán,base.state_gt_cqm,06
+county_gt_47,Olopa,base.state_gt_cqm,07
+county_gt_46,Quetzaltepeque,base.state_gt_cqm,08
+county_gt_51,San Jacinto,base.state_gt_cqm,09
+county_gt_52,San José la Arada,base.state_gt_cqm,10
+county_gt_49,San Juan Ermita,base.state_gt_cqm,11
+county_gt_67,El Jícaro,base.state_gt_epr,01
+county_gt_73,Guastatoya,base.state_gt_epr,02
+county_gt_68,Morazán,base.state_gt_epr,03
+county_gt_69,San Agustín Acasaguastlán,base.state_gt_epr,04
+county_gt_70,San Antonio La Paz,base.state_gt_epr,05
+county_gt_71,San Cristóbal Acasaguastlán,base.state_gt_epr,06
+county_gt_72,Sanarate,base.state_gt_epr,07
+county_gt_74,Sansare,base.state_gt_epr,08
+county_gt_96,Escuintla,base.state_gt_esc,01
+county_gt_103,Guanagazapa,base.state_gt_esc,02
+county_gt_105,Iztapa,base.state_gt_esc,02
+county_gt_98,La Democracia,base.state_gt_esc,03
+county_gt_102,La Gomera,base.state_gt_esc,04
+county_gt_100,Masagua,base.state_gt_esc,05
+county_gt_108,Nueva Concepción,base.state_gt_esc,06
+county_gt_106,Palín,base.state_gt_esc,07
+county_gt_104,San José,base.state_gt_esc,08
+county_gt_107,San Vicente Pacaya,base.state_gt_esc,10
+county_gt_97,Santa Lucía Cotzumalguapa,base.state_gt_esc,11
+county_gt_99,Siquinalá,base.state_gt_esc,12
+county_gt_101,Tiquisate,base.state_gt_esc,13
+county_gt_121,Amatitlán,base.state_gt_gua,01
+county_gt_114,Chinautla,base.state_gt_gua,02
+county_gt_119,Chuarrancho,base.state_gt_gua,03
+county_gt_120,Fraijanes,base.state_gt_gua,04
+county_gt_111,Guatemala,base.state_gt_gua,05
+county_gt_116,Mixco,base.state_gt_gua,06
+county_gt_113,Palencia,base.state_gt_gua,07
+county_gt_112,San José del Golfo,base.state_gt_gua,08
+county_gt_110,San José Pinula,base.state_gt_gua,09
+county_gt_118,San Juan Sacatepéquez,base.state_gt_gua,10
+county_gt_124,San Miguel Petapa,base.state_gt_gua,11
+county_gt_115,San Pedro Ayampuc,base.state_gt_gua,12
+county_gt_117,San Pedro Sacatepéquez,base.state_gt_gua,13
+county_gt_125,San Raymundo,base.state_gt_gua,14
+county_gt_109,Santa Catarina Pinula,base.state_gt_gua,15
+county_gt_123,Villa Canales,base.state_gt_gua,16
+county_gt_122,Villa Nueva,base.state_gt_gua,17
+county_gt_152,Aguacatán,base.state_gt_hue,01
+county_gt_127,Chiantla,base.state_gt_hue,02
+county_gt_144,Colotenango,base.state_gt_hue,03
+county_gt_147,Concepción Huista,base.state_gt_hue,04
+county_gt_129,Cuilco,base.state_gt_hue,05
+county_gt_126,Huehuetenango,base.state_gt_hue,05
+county_gt_134,Ixtahuacán,base.state_gt_hue,06
+county_gt_132,Jacaltenango,base.state_gt_hue,07
+county_gt_137,La Democracia,base.state_gt_hue,12
+county_gt_136,La Libertad,base.state_gt_hue,13
+county_gt_128,Malacatancito,base.state_gt_hue,14
+county_gt_130,Nentón,base.state_gt_hue,15
+county_gt_149,San Antonio Huista,base.state_gt_hue,15
+county_gt_154,San Gaspar Ixchil,base.state_gt_hue,16
+county_gt_141,San Juan Atitlán,base.state_gt_hue,17
+county_gt_148,San Juan Ixcoy,base.state_gt_hue,18
+county_gt_143,San Mateo Ixtatán,base.state_gt_hue,19
+county_gt_138,San Miguel Acatán,base.state_gt_hue,20
+county_gt_131,San Pedro Necta,base.state_gt_hue,21
+county_gt_139,San Rafael La Independencia,base.state_gt_hue,22
+county_gt_153,San Rafael Petzal,base.state_gt_hue,23
+county_gt_151,San Sebastián Coatán,base.state_gt_hue,24
+county_gt_145,San Sebastián Huehuetenango,base.state_gt_hue,25
+county_gt_157,Santa Ana Huista,base.state_gt_hue,26
+county_gt_135,Santa Bárbara,base.state_gt_hue,27
+county_gt_150,Santa Cruz Barillas,base.state_gt_hue,28
+county_gt_142,Santa Eulalia,base.state_gt_hue,29
+county_gt_156,Santiago Chimaltenango,base.state_gt_hue,30
+county_gt_133,Soloma,base.state_gt_hue,31
+county_gt_146,Tectitán,base.state_gt_hue,32
+county_gt_140,Todos Santos Cuchumatán,base.state_gt_hue,33
+county_gt_155,Unión Cantinil,base.state_gt_hue,34
+county_gt_161,El Estor,base.state_gt_iza,01
+county_gt_160,Livingston,base.state_gt_iza,02
+county_gt_159,Los Amates,base.state_gt_iza,03
+county_gt_158,Morales,base.state_gt_iza,04
+county_gt_162,Puerto Barrios,base.state_gt_iza,05
+county_gt_163,Jalapa,base.state_gt_jal,01
+county_gt_169,Mataquescuintla,base.state_gt_jal,02
+county_gt_168,Monjas,base.state_gt_jal,03
+county_gt_167,San Carlos Alzatate,base.state_gt_jal,04
+county_gt_165,San Luis Jilotepeque,base.state_gt_jal,05
+county_gt_166,San Manuel Chaparrón,base.state_gt_jal,06
+county_gt_164,San Pedro Pinula,base.state_gt_jal,07
+county_gt_173,Agua Blanca,base.state_gt_jut,01
+county_gt_174,Asunción Mita,base.state_gt_jut,02
+county_gt_176,Atescatempa,base.state_gt_jut,03
+county_gt_180,Comapa,base.state_gt_jut,04
+county_gt_182,Conguaco,base.state_gt_jut,05
+county_gt_178,El Adelanto,base.state_gt_jut,06
+county_gt_171,El Progreso,base.state_gt_jut,07
+county_gt_181,Jalpatagua,base.state_gt_jut,08
+county_gt_177,Jerez,base.state_gt_jut,09
+county_gt_170,Jutiapa,base.state_gt_jut,10
+county_gt_183,Moyuta,base.state_gt_jut,11
+county_gt_184,Pasaco,base.state_gt_jut,12
+county_gt_186,Quesada,base.state_gt_jut,13
+county_gt_185,San José Acatempa,base.state_gt_jut,14
+county_gt_172,Santa Catarina Mita,base.state_gt_jut,15
+county_gt_175,Yupiltepeque,base.state_gt_jut,16
+county_gt_179,Zapotitlán,base.state_gt_jut,17
+county_gt_60,Dolores,base.state_gt_pet,01
+county_gt_64,El Chal,base.state_gt_pet,03
+county_gt_53,Flores,base.state_gt_pet,04
+county_gt_57,La Libertad,base.state_gt_pet,06
+county_gt_65,Las Cruces,base.state_gt_pet,07
+county_gt_63,Melchor de Mencos,base.state_gt_pet,08
+county_gt_66,Poptún,base.state_gt_pet,09
+county_gt_56,San Andrés,base.state_gt_pet,09
+county_gt_55,San Benito,base.state_gt_pet,10
+county_gt_58,San Francisco,base.state_gt_pet,11
+county_gt_54,San José,base.state_gt_pet,11
+county_gt_61,San Luis,base.state_gt_pet,12
+county_gt_59,Santa Ana,base.state_gt_pet,13
+county_gt_62,Sayaxché,base.state_gt_pet,14
+county_gt_199,Almolonga,base.state_gt_que,01
+county_gt_192,Cabricán,base.state_gt_que,02
+county_gt_193,Cajolá,base.state_gt_que,04
+county_gt_200,Cantel,base.state_gt_que,05
+county_gt_206,Coatepeque,base.state_gt_que,06
+county_gt_203,Colomba Costa Cuca,base.state_gt_que,07
+county_gt_197,Concepción Chiquirichapa,base.state_gt_que,08
+county_gt_205,El Palmar,base.state_gt_que,09
+county_gt_208,Flores Costa Cuca,base.state_gt_que,10
+county_gt_207,Génova,base.state_gt_que,11
+county_gt_201,Huitán,base.state_gt_que,12
+county_gt_209,La Esperanza,base.state_gt_que,13
+county_gt_210,Palestina de los Altos,base.state_gt_que,14
+county_gt_187,Quetzaltenango,base.state_gt_que,15
+county_gt_188,Salcajá,base.state_gt_que,16
+county_gt_190,San Carlos Sija,base.state_gt_que,17
+county_gt_204,San Francisco La Unión,base.state_gt_que,18
+county_gt_189,San Juan Olintepeque,base.state_gt_que,19
+county_gt_195,San Juan Ostuncalco,base.state_gt_que,20
+county_gt_198,San Martín Sacatepéquez,base.state_gt_que,21
+county_gt_196,San Mateo,base.state_gt_que,22
+county_gt_194,San Miguel Siguilá,base.state_gt_que,23
+county_gt_191,Sibilia,base.state_gt_que,24
+county_gt_202,Zunil,base.state_gt_que,25
+county_gt_92,Canillá,base.state_gt_qui,01
+county_gt_79,Chajul,base.state_gt_qui,02
+county_gt_93,Chicamán,base.state_gt_qui,03
+county_gt_76,Chiché,base.state_gt_qui,04
+county_gt_77,Chinique,base.state_gt_qui,05
+county_gt_84,Cunén,base.state_gt_qui,07
+county_gt_94,Ixcán,base.state_gt_qui,08
+county_gt_95,Pachalum,base.state_gt_qui,09
+county_gt_81,Patzité,base.state_gt_qui,10
+county_gt_90,Sacapulas,base.state_gt_qui,11
+county_gt_88,San Andrés Sajcabajá,base.state_gt_qui,14
+county_gt_82,San Antonio Ilotenango,base.state_gt_qui,16
+county_gt_91,San Bartolomé Jocotenango,base.state_gt_qui,17
+county_gt_85,San Juan Cotzal,base.state_gt_qui,18
+county_gt_83,San Pedro Jocopilas,base.state_gt_qui,19
+county_gt_75,Santa Cruz del Quiché,base.state_gt_qui,20
+county_gt_86,Santa María Joyabaj,base.state_gt_qui,21
+county_gt_87,Santa María Nebaj,base.state_gt_qui,22
+county_gt_80,Santo Tomás Chichicastenango,base.state_gt_qui,23
+county_gt_89,Uspantán,base.state_gt_qui,24
+county_gt_78,Zacualpa,base.state_gt_qui,25
+county_gt_217,Champerico,base.state_gt_ret,01
+county_gt_219,El Asintal,base.state_gt_ret,02
+county_gt_218,Nuevo San Carlos,base.state_gt_ret,03
+county_gt_211,Retalhuleu,base.state_gt_ret,04
+county_gt_216,San Andrés Villa Seca,base.state_gt_ret,05
+county_gt_215,San Felipe,base.state_gt_ret,06
+county_gt_214,San Martín Zapotitlán,base.state_gt_ret,07
+county_gt_212,San Sebastián,base.state_gt_ret,08
+county_gt_213,Santa Cruz Muluá,base.state_gt_ret,09
+county_gt_220,Antigua Guatemala,base.state_gt_sac,01
+county_gt_231,Ciudad Vieja,base.state_gt_sac,02
+county_gt_221,Jocotenango,base.state_gt_sac,03
+county_gt_229,Magdalena Milpas Altas,base.state_gt_sac,04
+county_gt_222,Pastores,base.state_gt_sac,05
+county_gt_234,San Antonio Aguas Calientes,base.state_gt_sac,06
+county_gt_226,San Bartolomé Milpas Altas,base.state_gt_sac,07
+county_gt_233,San Juan Alotenango,base.state_gt_sac,08
+county_gt_227,San Lucas Sacatepéquez,base.state_gt_sac,09
+county_gt_232,San Miguel Dueñas,base.state_gt_sac,10
+county_gt_235,Santa Catarina Barahona,base.state_gt_sac,11
+county_gt_228,Santa Lucía Milpas Altas,base.state_gt_sac,12
+county_gt_230,Santa María de Jesús,base.state_gt_sac,13
+county_gt_225,Santiago Sacatepéquez,base.state_gt_sac,15
+county_gt_224,Santo Domingo Xenacoj,base.state_gt_sac,16
+county_gt_223,Sumpango,base.state_gt_sac,17
+county_gt_237,Ayutla,base.state_gt_sma,01
+county_gt_238,Catarina,base.state_gt_sma,02
+county_gt_239,Comitancillo,base.state_gt_sma,03
+county_gt_240,Concepción Tutuapa,base.state_gt_sma,04
+county_gt_241,El Quetzal,base.state_gt_sma,05
+county_gt_242,El Rodeo,base.state_gt_sma,06
+county_gt_243,El Tumbador,base.state_gt_sma,07
+county_gt_250,Esquipulas Palo Gordo,base.state_gt_sma,08
+county_gt_244,Ixchiguán,base.state_gt_sma,09
+county_gt_265,La Blanca,base.state_gt_sma,10
+county_gt_245,La Reforma,base.state_gt_sma,11
+county_gt_246,Malacatán,base.state_gt_sma,12
+county_gt_247,Nuevo Progreso,base.state_gt_sma,13
+county_gt_248,Ocós,base.state_gt_sma,15
+county_gt_249,Pajapita,base.state_gt_sma,16
+county_gt_264,Río Blanco,base.state_gt_sma,17
+county_gt_251,San Antonio Sacatepéquez,base.state_gt_sma,18
+county_gt_252,San Cristóbal Cucho,base.state_gt_sma,19
+county_gt_253,San José Ojetenán,base.state_gt_sma,20
+county_gt_254,San Lorenzo,base.state_gt_sma,21
+county_gt_236,San Marcos,base.state_gt_sma,22
+county_gt_255,San Miguel Ixtahuacán,base.state_gt_sma,23
+county_gt_256,San Pablo,base.state_gt_sma,24
+county_gt_257,San Pedro Sacatepéquez,base.state_gt_sma,25
+county_gt_258,San Rafael Pie de la Cuesta,base.state_gt_sma,26
+county_gt_259,Sibinal,base.state_gt_sma,27
+county_gt_260,Sipacapa,base.state_gt_sma,28
+county_gt_261,Tacaná,base.state_gt_sma,29
+county_gt_262,Tajumulco,base.state_gt_sma,30
+county_gt_263,Tejutla,base.state_gt_sma,31
+county_gt_281,Concepción,base.state_gt_sol,01
+county_gt_282,Nahualá,base.state_gt_sol,02
+county_gt_283,Panajachel,base.state_gt_sol,03
+county_gt_284,San Andrés Semetabaj,base.state_gt_sol,04
+county_gt_285,San Antonio Palopó,base.state_gt_sol,05
+county_gt_286,San José Chacayá,base.state_gt_sol,06
+county_gt_287,San Juan La Laguna,base.state_gt_sol,07
+county_gt_288,San Lucas Tolimán,base.state_gt_sol,08
+county_gt_289,San Marcos La Laguna,base.state_gt_sol,09
+county_gt_290,San Pablo La Laguna,base.state_gt_sol,10
+county_gt_291,San Pedro La Laguna,base.state_gt_sol,11
+county_gt_292,Santa Catarina Ixtahuacán,base.state_gt_sol,12
+county_gt_293,Santa Catarina Palopó,base.state_gt_sol,13
+county_gt_294,Santa Clara La Laguna,base.state_gt_sol,14
+county_gt_295,Santa Cruz La Laguna,base.state_gt_sol,15
+county_gt_296,Santa Lucía Utatlán,base.state_gt_sol,16
+county_gt_297,Santa María Visitación,base.state_gt_sol,17
+county_gt_298,Santiago Atitlán,base.state_gt_sol,18
+county_gt_280,Sololá,base.state_gt_sol,19
+county_gt_279,Barberena,base.state_gt_sro,01
+county_gt_267,Casillas Santa Rosa,base.state_gt_sro,02
+county_gt_268,Chiquimulilla,base.state_gt_sro,03
+county_gt_266,Cuilapa,base.state_gt_sro,04
+county_gt_269,Guazacapán,base.state_gt_sro,05
+county_gt_270,Nueva Santa Rosa,base.state_gt_sro,06
+county_gt_271,Oratorio,base.state_gt_sro,07
+county_gt_272,Pueblo Nuevo Viñas,base.state_gt_sro,08
+county_gt_273,San Juan Tecuaco,base.state_gt_sro,09
+county_gt_274,San Rafael Las Flores,base.state_gt_sro,10
+county_gt_275,Santa Cruz Naranjo,base.state_gt_sro,11
+county_gt_276,Santa María Ixhuatán,base.state_gt_sro,12
+county_gt_277,Santa Rosa de Lima,base.state_gt_sro,13
+county_gt_278,Taxisco,base.state_gt_sro,14
+county_gt_311,Chicacao,base.state_gt_suc,01
+county_gt_300,Cuyotenango,base.state_gt_suc,02
+county_gt_299,Mazatenango,base.state_gt_suc,03
+county_gt_312,Patulul,base.state_gt_suc,04
+county_gt_317,Pueblo Nuevo,base.state_gt_suc,05
+county_gt_319,Río Bravo,base.state_gt_suc,06
+county_gt_306,Samayac,base.state_gt_suc,08
+county_gt_308,San Antonio Suchitepéquez,base.state_gt_suc,09
+county_gt_302,San Bernardino,base.state_gt_suc,10
+county_gt_301,San Francisco Zapotitlán,base.state_gt_suc,10
+county_gt_310,San Gabriel,base.state_gt_suc,11
+county_gt_303,San José El Ídolo,base.state_gt_suc,12
+county_gt_318,San José La Máquina,base.state_gt_suc,13
+county_gt_314,San Juan Bautista,base.state_gt_suc,14
+county_gt_305,San Lorenzo,base.state_gt_suc,16
+county_gt_309,San Miguel Panán,base.state_gt_suc,17
+county_gt_307,San Pablo Jocopilas,base.state_gt_suc,18
+county_gt_313,Santa Bárbara,base.state_gt_suc,19
+county_gt_304,Santo Domingo Suchitepéquez,base.state_gt_suc,20
+county_gt_315,Santo Tomás La Unión,base.state_gt_suc,29
+county_gt_316,Zunilito,base.state_gt_suc,30
+county_gt_324,Momostenango,base.state_gt_tot,01
+county_gt_323,San Andrés Xecul,base.state_gt_tot,02
+county_gt_327,San Bartolo,base.state_gt_tot,03
+county_gt_321,San Cristóbal Totonicapán,base.state_gt_tot,04
+county_gt_322,San Francisco El Alto,base.state_gt_tot,05
+county_gt_326,Santa Lucía La Reforma,base.state_gt_tot,06
+county_gt_325,Santa María Chiquimula,base.state_gt_tot,07
+county_gt_320,Totonicapán,base.state_gt_tot,08
+county_gt_328,Cabañas,base.state_gt_zac,01
+county_gt_329,Estanzuela,base.state_gt_zac,02
+county_gt_330,Gualán,base.state_gt_zac,03
+county_gt_331,Huité,base.state_gt_zac,04
+county_gt_332,La Unión,base.state_gt_zac,05
+county_gt_333,Río Hondo,base.state_gt_zac,06
+county_gt_335,San Diego,base.state_gt_zac,07
+county_gt_334,San Jorge,base.state_gt_zac,08
+county_gt_336,Teculután,base.state_gt_zac,09
+county_gt_337,Usumatlán,base.state_gt_zac,10
+county_gt_338,Zacapa,base.state_gt_zac,11

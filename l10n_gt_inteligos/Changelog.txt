@@ -1,0 +1,31 @@
+CHANGELOGS
+==========
+- Se renombra este módulo l10n_gt_td_generic a l10n_gt_inteligos, ya que contiene datos base de la localización Inteligos
+
+- El atributo attrs deja de ser utilizado desde v17, se deben de agregar los atributos invisible, readonly, required, etc
+directamente en el campo de la vista. Ver herramienta https://github.com/pierrelocus/odoo-attrs-replace
+- El atributo states definido en los campos python deja de ser utilizado desde v17.
+- No se debe de utilizar _name = 'my.model' seguido de _inherit = 'my.model' al realizar una herencia de método, se debe
+de utilizar únicamente _inherit = 'my.model'
+- 'default_parent_id': active_id, se debe de cambiar por 'default_parent_id': id en los contextos de vista
+- El decorador @api.model del método genérico create debe ser cambiado por @api.model_create_multi ya que no recibe un
+solo registro, en lugar de vals se debe de utilizar vals_list
+- Modelo account.chart.template pasa de ser un modelo concreto a un modelo abstracto
+- Para que las plantillas estén vinculados a un paquete fiscal (Grupos de impuestos, cuentas, grupos de cuentas,
+posiciones fiscales, etc) estos deben de estar en un directorio llamado data/template en el módulo, con el nombre del
+modelo y el sufijo -gt(o código de país) ej: account.tax.group-gt.csv
+- Los paquetes de localización ya no se generan desde un data XML, sino de forma dinámica a través de métodos dentro de
+la clase account.chart.template abstracta
+- Los métodos para post_init_hook y uninstall_hook deben ya no utilizan el cursor de la base de datos en sus
+argumentos, se debe de cambiar por env y para usar el cursor se debe de utilizar env.cr.execute(...
+-
+
+PENDIENTE:
+- Revisar las cuentas de los impuestos
+- Revisar todas las referencieas del módulo l10n_gt_td_generic en desarrollos personalizados de cada cliente y demás submódulos que no sea addons_gen
+
+A TOMAR EN CUENTA EN LA MIGRACIÓN DE DATOS:
+- El campo invoice_doc_type en account.move se quita del módulo ya que es redudnante con un campo base ya existente
+ l10n_latam_document_type_id, por lo que se debe tomar en cuenta para el traslado de datos de facturas existentes para
+ hacer el traslado de información de un campo a otro.
+ - El campo invoice_doc_type se renombra a l10n_latam_document_type_id en res.config.settings y res.company

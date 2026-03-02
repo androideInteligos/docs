@@ -1,0 +1,14 @@
+<odoo>
+    <record model="ir.ui.view" id="view_account_journal_form">
+        <field name="name">Secuencias de Diario</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="refund_sequence" position="before">
+                <field name="sequence" invisible="country_code != 'GT'"/>
+                <field name="sequence_id" groups="base.group_no_one" invisible="country_code != 'GT'"/>
+                <field name="refund_sequence_id" groups="base.group_no_one" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

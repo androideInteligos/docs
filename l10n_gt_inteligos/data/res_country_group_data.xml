@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+       <record id="resto_mundo" model="res.country.group">
+           <field name="name">Resto del Mundo</field>
+       </record>
+        <record id="centroamerica" model="res.country.group">
+           <field name="name">Centroamérica</field>
+       </record>
+        <record id="norteamerica" model="res.country.group">
+           <field name="name">Norteamérica</field>
+       </record>
+    </data>
+</odoo>

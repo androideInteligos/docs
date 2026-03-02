@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_account_supplier_payment_tree" model="ir.ui.view">
+        <field name="name">Herencia de vista tipo listado de pagos para extender</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/>
+        <field name="arch" type="xml">
+            <!--OJO: No se aplico el cambio changegt por ser un campo reemplazado-->
+            <field name="name" position="replace">
+                <field name="display_name"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_payment_form_extend_view" model="ir.ui.view">
+        <field name="name">Herencia de vista formulario de pagos para extender</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <field name="journal_id" position="after">
+                <!--changegt-->
+                <field name="method" invisible="country_code not in ('GT', 'CR')"/>
+                <field name="bank_reference" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

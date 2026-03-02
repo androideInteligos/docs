@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">Herencia de vista para agregar nuevo campo de municipio</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="city" position="replace">
+                <field name="county_id" placeholder="Municipio" class="o_address_city"
+                       options="{&quot;no_open&quot;: True, 'no_create_edit': True}" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

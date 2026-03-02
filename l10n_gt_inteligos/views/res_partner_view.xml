@@ -1,0 +1,184 @@
+<odoo>
+
+    <record id="view_partner_gt" model="ir.ui.view">
+        <field name="name">Herencia a la vista tipo formulario de los contactos para modificar la ubicación de los datos
+            de identificación fiscal.
+        </field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">300</field>
+        <field name="arch" type="xml">
+            <!--changegt-->
+            <!--OJO: changegt no se modificaron los nuevos atributos-->
+            <xpath expr="//*[@name='address_name']" position="before">
+                <field name="country_code" invisible="1"/>
+                <field name="legal_name" invisible="country_code != 'GT'"/>
+            </xpath>
+
+            <field name="email" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+
+            <xpath expr="//form/div" position="after">
+                <!--changegt-->
+                <field name="country_code" invisible="1"/>
+                <div class="alert alert-warning oe_edit_only" role="alert"
+                     invisible="not same_vat_partner_id or country_code != 'GT'">
+                    Un cliente con la misma
+                    <span>
+                        <span class="o_vat_label">Razón Social</span>
+                    </span>
+                    ya existe (<field name="same_vat_partner_id"/>), está seguro que desea crear uno nuevo?
+                </div>
+            </xpath>
+
+            <field name="company_type" position="before">
+                <!--changegt-->
+                <field name="country_code" invisible="1"/>
+                <label for="l10n_latam_identification_type_id" string="Número de Identificación"
+                       invisible="country_code != 'GT'"/>
+                <div name="latam_vat" class="mb-5" invisible="country_code != 'GT'">
+                    <field name="l10n_latam_identification_type_id" options="{'no_open': True, 'no_create': True}"
+                           placeholder="Tipo" readonly="parent_id" class="oe_inline"
+                           domain="country_id and ['|', ('country_id', '=', False), ('country_id', '=', country_id)] or []"
+                           required="True"/>
+                    <span class="oe_read_only">-</span>
+                    <field name="vat" placeholder="NIT" class="ml-3 oe_inline" readonly="parent_id"/>
+                </div>
+            </field>
+
+            <!--            gt_territorial_division-->
+            <div class="o_address_format" position="replace">
+                <div class="o_address_format">
+                    <field name="country_code" invisible="1"/>
+                    <field name="street" placeholder="Calle..." class="o_address_street"
+                           readonly="type == 'contact' and parent_id"/>
+                    <field name="street2" placeholder="Calle 2..." class="o_address_street"
+                           readonly="type == 'contact' and parent_id"/>
+                    <div name="partner_address_country" class="d-flex justify-content-between">
+                        <field name="country_id" placeholder="País" class="o_address_country"
+                               options='{"no_open": True, "no_create": True}'
+                               readonly="type == 'contact' and parent_id"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <field name="state_id" placeholder="Departamento"
+                                   options="{'no_open': True, 'no_quick_create': True}"
+                                   readonly="type == 'contact' and parent_id"
+                                   context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                        </div>
+                        <div class="col-6">
+                            <field name="county_id" placeholder="Municipio"
+                                   options="{&quot;no_open&quot;: True, 'no_create_edit': True}"
+                                   readonly="type == 'contact' and parent_id"
+                                   invisible="country_code != 'GT'"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <field name="zone_partner_id" placeholder="Zona"
+                                   domain="[('county_id', '=', county_id)]"
+                                   options="{'no_create': True}"
+                                   invisible="country_code != 'GT'"/>
+                        </div>
+                        <div class="col-6">
+                            <field name="zip" placeholder="Código Postal"
+                                   readonly="type == 'contact' and parent_id"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <field name="child_ids" position="attributes">
+                <attribute name="context">{'default_parent_id': id, 'default_street': street, 'default_street2':
+                    street2, 'default_county_id': county_id, 'default_state_id': state_id, 'default_zip': zip,
+                    'default_country_id': country_id, 'default_lang': lang, 'default_user_id': user_id, 'default_type':
+                    'other'}
+                </attribute>
+            </field>
+
+            <xpath expr="//kanban/templates//field[@name='city']" position="replace">
+                <field name="country_code" invisible="1"/>
+                <field name="county_id" options="{&quot;no_open&quot;: True, 'no_create_edit': True}"
+                       invisible="country_code != 'GT'"/>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form//div[@name='div_address']" position="replace">
+                <div class="o_address_format">
+                    <field name="country_code" invisible="1"/>
+                    <field name="street" placeholder="Calle..." class="o_address_street"
+                           readonly="type == 'contact' and parent_id"/>
+                    <field name="street2" placeholder="Calle 2..." class="o_address_street"
+                           readonly="type == 'contact' and parent_id"/>
+                    <field name="country_id" placeholder="País" class="o_address_country"
+                           options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                           readonly="type == 'contact' and parent_id"/>
+                    <div class="row">
+                        <div class="col-6">
+                            <field name="state_id" placeholder="Departamento"
+                                   options="{'no_open': True, 'no_quick_create': True}"
+                                   readonly="type == 'contact' and parent_id"
+                                   context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                        </div>
+                        <div class="col-6">
+                            <field name="county_id" placeholder="Municipio"
+                                   options="{&quot;no_open&quot;: True, 'no_create_edit': True}"
+                                   readonly="type == 'contact' and parent_id" invisible="country_code != 'GT'"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <field name="zone_partner_id" placeholder="Zona" domain="[('county_id', '=', county_id)]"
+                                   invisible="country_code != 'GT'"/>
+                        </div>
+                        <div class="col-6">
+                            <field name="zip" placeholder="Código Postal" readonly="type == 'contact' and parent_id"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_filter">
+        <field name="name">Herencia de Vista tipo Búsqueda de Contactos para Regiones de Ventas</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[@name='group_country']" position="after">
+                <filter string="Sub-regiones" name="sub_region" domain="[]" context="{'group_by': 'sub_region_id'}"/>
+                <filter string="Regiones" name="region" domain="[]" context="{'group_by': 'region_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--          VISTA PARA CAMBIOS EN CONTACTOS, CAMBIAR DE LUGAR  EL NIT-->
+    <record id="view_partner_invisible_latam_vat" model="ir.ui.view">
+        <field name="name">Herencia a vista Latam para cambio de posición de NIT</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="l10n_latam_base.view_partner_latam_form"/>
+        <field name="priority">300</field>
+        <field name="arch" type="xml">
+            <!--OJO: changegt no se modificaron los nuevos atributos-->
+            <xpath expr="//label[@for='l10n_latam_identification_type_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <field name="l10n_latam_identification_type_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <xpath expr="//div/span[hasclass('oe_read_only')]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <field name="vat" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

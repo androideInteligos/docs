@@ -1,0 +1,13 @@
+id,sequence,code,name,report_name,internal_type,doc_code_prefix,country_id/id,active
+dc_reci,10,1,Recibo,Recibos,invoice,RECI,base.gt,True
+dc_fcam,20,2,Factura Cambiaria,Facturas Cambiarias,invoice,FCAM	,base.gt,True
+dc_fpeq,30,3,Factura Pequeño Contribuyente,Facturas Pequeño Contribuyente,invoice,FPEQ,base.gt,True
+dc_cap,40,4,Factura Cambiaria Pequeño Contribuyente,Facturas Cambiaria Pequeño Contribuyente,invoice,FCAP,base.gt,True
+dc_fesp,50,5,Factura Especial,Factura Especial,invoice,FESP,base.gt,True
+dc_rdon,60,6,Recibio Donación,Recibo Donación,invoice,RDON,base.gt,True
+dc_fact,70,7,Factura,Facturas,invoice,FACT,base.gt,True
+dc_nabn,80,8,Nota de Abono,Notas de Abono,credit_note,NABN,base.gt,True
+dc_ncre,90,9,Nota de Crédito,Notas de Crédito,credit_note,NCRE,base.gt,True
+dc_ndeb,100,10,Nota de Débito,Nota de Debito,debit_note,NDEB,base.gt,True
+dc_fpe,170,21,Factura Electrónica Pequeño Contribuyente,,invoice,FPE,base.gt,True
+dc_fape,180,22,Factura Régimen Electrónico Pequeño Contribuyente,,invoice,FAPE,base.gt,True

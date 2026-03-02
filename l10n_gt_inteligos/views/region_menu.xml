@@ -1,0 +1,73 @@
+<odoo>
+
+    <!-- explicit form view Sub región -->
+    <record model="ir.ui.view" id="sub_region_form_view">
+        <field name="name">Vista Formulario - Sub regiones geográficas Guatemala</field>
+        <field name="model">gt.sub_region</field>
+        <field name="arch" type="xml">
+            <form string="Sub región">
+                <sheet name="sheet_wr">
+                    <group name="head">
+                        <group name="name_and_region">
+                            <field name="name"/>
+                            <field name="region_id"/>
+                        </group>
+                    </group>
+
+                    <group name="description">
+                        <field name="description"/>
+                    </group>
+
+                    <notebook name="states">
+                        <page name="states" string="Departamentos">
+                            <field name="state_ids" widget="many2many"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="region_action_window">
+        <field name="name">Regiones</field>
+        <field name="res_model">gt.region</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Regiones geográficas.
+            </p>
+            <p>
+                Cada registro debe ser una región distinta relacionada con sus respectivas subregiones.
+            </p>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="sub_region_action_window">
+        <field name="name">Sub-regiones</field>
+        <field name="res_model">gt.sub_region</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Sub-regiones geográficas.
+            </p>
+            <p>
+                Cada registro debe ser una sub-región distinta relacionada con sus respectivos departamentos.
+            </p>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <menuitem name="Sub regiones" id="menu_sub_region"
+              parent="contacts.menu_localisation" sequence="6"
+              action="sub_region_action_window"
+              groups="base.group_system"/>
+
+    <!-- actions -->
+    <menuitem name="Regiones" id="menu_region"
+              parent="contacts.menu_localisation" sequence="5"
+              action="region_action_window"
+              groups="base.group_system"/>
+
+</odoo>

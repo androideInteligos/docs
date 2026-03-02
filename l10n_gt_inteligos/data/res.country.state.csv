@@ -1,0 +1,23 @@
+id,name,gt_code
+base.state_gt_ave,Alta Verapaz,15
+base.state_gt_bve,Baja Verapaz,16
+base.state_gt_cmt,Chimaltenango,04
+base.state_gt_cqm,Chiquimula,20
+base.state_gt_pet,El Petén,17
+base.state_gt_epr,El Progreso,02
+base.state_gt_qui,El Quiché,14
+base.state_gt_esc,Escuintla,05
+base.state_gt_gua,Guatemala,01
+base.state_gt_hue,Huehuetenango,13
+base.state_gt_iza,Izabal,18
+base.state_gt_jal,Jalapa,21
+base.state_gt_jut,Jutiapa,22
+base.state_gt_que,Quetzaltenango,09
+base.state_gt_ret,Retalhuleu,11
+base.state_gt_sac,Sacatepequez,03
+base.state_gt_sma,San Marcos,12
+base.state_gt_sro,Santa Rosa,06
+base.state_gt_sol,Sololá,07
+base.state_gt_suc,Suchitepequez,10
+base.state_gt_tot,Totonicapán,08
+base.state_gt_zac,Zacapa,19

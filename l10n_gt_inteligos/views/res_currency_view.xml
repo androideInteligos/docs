@@ -1,0 +1,20 @@
+<odoo>
+
+    <record id="sh_res_company" model="ir.ui.view">
+        <field name="name">Herencia de vista formulario para agregar campos útiles en montos con letras</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <!--changegt-->
+            <field name="currency_subunit_label" position="before">
+                <field name="country_code" invisible="1"/>
+                <field name="amount_separator" invisible="country_code != 'GT'"/>
+            </field>
+            <field name="currency_subunit_label" position="after">
+                <field name="country_code" invisible="1"/>
+                <field name="close_financial_text" invisible="country_code != 'GT'"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

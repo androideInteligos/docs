@@ -1,0 +1,62 @@
+<odoo>
+
+    <!-- explicit list view Municipios -->
+    <record model="ir.ui.view" id="gt_zone_list_view">
+        <field name="name">Vista Listado - Zonas Municipales geográficos de Guatemala</field>
+        <field name="model">gt.zone</field>
+        <field name="arch" type="xml">
+            <list create="false" name="list_gt_zone">
+                <field name="name"/>
+                <field name="gt_code"/>
+                <field name="county_id"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- explicit form view Municipios -->
+    <record model="ir.ui.view" id="gt_zone_form_view">
+        <field name="name">Vista Formulario - Zonas municipales de Guatemala</field>
+        <field name="model">gt.zone</field>
+        <field name="arch" type="xml">
+            <form string="Zonas">
+                <sheet name="sheet_wr">
+                    <div class="oe_title" name="title_name">
+                        <h1 name="title">
+                            <field name="name"/>
+                        </h1>
+
+                        <group name="Municipio">
+                            <field name="county_id"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                        </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="gt_zone_action_window">
+        <field name="name">Zonas Municipales</field>
+        <field name="res_model">gt.zone</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Administración de Zonas Municipales en el sistema.
+            </p>
+            <p>
+                Cada registro debe ser una zona municipal enlazado a su respectivo municipio.
+            </p>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <menuitem name="Zonas" id="menu_gt_zone"
+              parent="contacts.menu_localisation" sequence="5"
+              action="gt_zone_action_window"
+              groups="base.group_system"/>
+
+</odoo>
